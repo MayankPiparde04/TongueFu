@@ -1,7 +1,7 @@
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const StartPage = () => {
+const index = () => {
   return (
     <View>
       <ActivityIndicator size={"large"} color={"#93f"} />
@@ -9,6 +9,6 @@ const StartPage = () => {
   );
 };
 
-export default StartPage;
+export default index;
 
 const styles = StyleSheet.create({});
