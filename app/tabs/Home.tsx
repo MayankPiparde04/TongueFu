@@ -28,16 +28,6 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => {
-            console.log("Navigating to Profile");
-            navigation.navigate("tabs/Profile");
-          }}
-          className="bg-blue-500 py-2 px-4 rounded"
-        >
-          <Text className="text-blue-700 text-2xl text-center">Profile</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.7}
           onPress={() => navigation.navigate("Welcomepage")}
           className="bg-blue-500 py-2 px-4 rounded"
         >

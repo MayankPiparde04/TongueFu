@@ -8,7 +8,8 @@ import Welcomepage from "./Welcomepage";
 import RegisterMethod from "./tabs/Registermethod"; // Ensure this matches your file name exactly
 import Details from "./tabs/Details";
 import Dashboard from "./tabs/Dashboard";
-import HomeHeader from "./tabs/Homeheader";
+import Otherheader from "./header/Otherheader";
+import Homeheader from "./header/Homeheader";
 import "../global.css";
 
 const Stack = createNativeStackNavigator();
@@ -21,22 +22,22 @@ const App = () => {
       <Stack.Screen
         name="Welcomepage"
         component={Welcomepage}
-        options={{ header: () => <HomeHeader /> }}
+        options={{ header: () => <Otherheader /> }}
       />
       <Stack.Screen
         name="tabs/Home"
         component={Home}
-        options={{ header: () => <HomeHeader /> }}
+        options={{ header: () => <Homeheader /> }}
       />
       <Stack.Screen
         name="tabs/Login"
         component={Login}
-        options={{ header: () => <HomeHeader /> }}
+        options={{ header: () => <Otherheader /> }}
       />
       <Stack.Screen
         name="tabs/Register"
         component={Register}
-        options={{ header: () => <HomeHeader /> }}
+        options={{ header: () => <Otherheader /> }}
       />
       <Stack.Screen
         name="tabs/Profile"
@@ -51,7 +52,7 @@ const App = () => {
       <Stack.Screen
         name="tabs/Details"
         component={Details}
-        options={{ header: () => <HomeHeader /> }}
+        options={{ header: () => <Otherheader /> }}
       />
       <Stack.Screen
         name="tabs/Dashboard"
