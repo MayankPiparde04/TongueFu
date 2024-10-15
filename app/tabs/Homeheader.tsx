@@ -1,6 +1,6 @@
 import { View, Image } from "react-native";
 import React from "react";
-import LOGO from "../assets/images/logo.png";
+import LOGO from "../../assets/images/logo.png";
 
 const HomeHeader = () => {
   return (

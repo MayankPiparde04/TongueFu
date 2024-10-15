@@ -15,7 +15,7 @@ const WelcomePage = () => {
 
   const handleGetStarted = () => {
     console.log("Get Started pressed!");
-    navigation.navigate("register_method");
+    navigation.navigate("tabs/Register_method");
   };
 
   return (
