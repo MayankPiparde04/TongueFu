@@ -3,7 +3,7 @@ import React from "react";
 import LOGO from "../../assets/images/logo.png";
 import { useNavigation } from "@react-navigation/native";
 
-const RegisterMethod = () => {
+const Registermethod = () => {
   const navigation = useNavigation();
 
   return (
@@ -80,4 +80,4 @@ const RegisterMethod = () => {
   );
 };
 
-export default RegisterMethod;
+export default Registermethod;
