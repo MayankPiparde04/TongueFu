@@ -3,8 +3,8 @@ import React from "react";
 
 const index = () => {
   return (
-    <View>
-      <ActivityIndicator size={"large"} color={"#93f"} />
+    <View className="bg-neutral-950">
+      <ActivityIndicator size={"large"} className="bg-teal-400" />
     </View>
   );
 };

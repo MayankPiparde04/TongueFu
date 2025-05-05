@@ -1,13 +1,8 @@
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
+import { Text, View, TouchableOpacity, FlatList } from "react-native";
 import React, { useState } from "react";
 
 const StageTwo = () => {
-  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
+  const [openDropdown, setOpenDropdown] = useState(null);
   const [birthYear, setBirthYear] = useState("");
   const [birthMonth, setBirthMonth] = useState("");
   const [birthDate, setBirthDate] = useState("");
@@ -17,9 +12,18 @@ const StageTwo = () => {
     (_, i) => 1950 + i
   );
   const months = [
-    "January", "February", "March", "April", "May",
-    "June", "July", "August", "September", "October",
-    "November", "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   const dates = Array.from({ length: 31 }, (_, i) => i + 1);
 
@@ -43,38 +47,42 @@ const StageTwo = () => {
   };
 
   return (
-    <View className="p-4 flex-1 min-w-full justify-center items-center bg-white">
+    <View className="p-4 flex-1 min-w-full justify-center items-center">
       {/* Date of Birth Section */}
-      <View className="bg-purple-400 p-6 rounded-[30px] mb-4 w-full">
-        <Text className="text-3xl font-bold mb-2">
+      <View className="bg-purple-600 p-6 rounded-[30px] mb-4 w-full">
+        <Text className="text-4xl text-gray-900 font-bold mb-2">
           Tell us your date of birth?
         </Text>
-        <Text className="text-xl mb-2 py-1 text-gray-100">
+        <Text className="text-xl  mb-2 py-1 text-gray-200">
           We can recommend better exercises according to your age.
         </Text>
 
         <View className="gap-2">
           {/* Year Dropdown */}
-          <TouchableOpacity activeOpacity={0.7}
-            onPress={() => toggleDropdown('year')}
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => toggleDropdown("year")}
             className="border border-purple-500 bg-purple-100 p-3 mb-2 rounded-2xl"
           >
-            <Text className="text-gray-700 text-xl px-4 bg-white py-3 rounded-2xl">
+            <Text className="text-gray-200 text-xl px-4 bg-gray-900 py-3 rounded-2xl">
               {birthYear || "Select your birth year!"}
             </Text>
           </TouchableOpacity>
 
-          {openDropdown === 'year' && (
-            <View className="border border-teal-400 rounded-2xl mt-1 mb-4 bg-white max-h-36">
+          {openDropdown === "year" && (
+            <View className="border border-teal-400 rounded-2xl mt-1 mb-4 bg-gray-900 max-h-40 overflow-hidden">
               <FlatList
                 data={years}
                 keyExtractor={(item) => item.toString()}
                 renderItem={({ item }) => (
-                  <TouchableOpacity activeOpacity={0.7}
+                  <TouchableOpacity
+                    activeOpacity={0.9}
                     onPress={() => handleSelectBirthYear(item)}
                     className="border-b border-teal-200"
                   >
-                    <Text className="text-gray-800 py-2 px-4 text-xl">{item}</Text>
+                    <Text className="text-gray-200 text-xl py-2 px-4">
+                      {item}
+                    </Text>
                   </TouchableOpacity>
                 )}
                 style={{ maxHeight: 120 }} // Adjust height for three items
@@ -84,26 +92,30 @@ const StageTwo = () => {
           )}
 
           {/* Month Dropdown */}
-          <TouchableOpacity activeOpacity={0.7}
-            onPress={() => toggleDropdown('month')}
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => toggleDropdown("month")}
             className="border border-yellow-500 bg-yellow-100 p-3 mb-2 rounded-2xl"
           >
-            <Text className="text-gray-700 text-xl px-4 bg-white py-3 rounded-2xl">
+            <Text className="text-gray-200 text-xl px-4 bg-gray-900 py-3 rounded-2xl">
               {birthMonth || "Select your birth month!"}
             </Text>
           </TouchableOpacity>
 
-          {openDropdown === 'month' && (
-            <View className="border border-yellow-400 rounded-2xl mt-1 mb-4 bg-white max-h-36">
+          {openDropdown === "month" && (
+            <View className="border border-yellow-400 rounded-2xl mt-1 mb-4 bg-gray-900 max-h-40 overflow-hidden">
               <FlatList
                 data={months}
                 keyExtractor={(item) => item}
                 renderItem={({ item }) => (
-                  <TouchableOpacity activeOpacity={0.7}
+                  <TouchableOpacity
+                    activeOpacity={0.9}
                     onPress={() => handleSelectBirthMonth(item)}
                     className="border-b border-yellow-200"
                   >
-                    <Text className="text-gray-800 py-2 px-4 text-xl">{item}</Text>
+                    <Text className="text-gray-200 text-xl py-2 px-4">
+                      {item}
+                    </Text>
                   </TouchableOpacity>
                 )}
                 style={{ maxHeight: 120 }} // Adjust height for three items
@@ -113,26 +125,30 @@ const StageTwo = () => {
           )}
 
           {/* Date Dropdown */}
-          <TouchableOpacity activeOpacity={0.7}
-            onPress={() => toggleDropdown('date')}
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => toggleDropdown("date")}
             className="border border-red-500 bg-red-100 p-3 mb-2 rounded-2xl"
           >
-            <Text className="text-gray-700 text-xl px-4 bg-white py-3 rounded-2xl">
+            <Text className="text-gray-200 text-xl px-4 bg-gray-900 py-3 rounded-2xl">
               {birthDate || "Select your birth date!"}
             </Text>
           </TouchableOpacity>
 
-          {openDropdown === 'date' && (
-            <View className="border border-red-400 rounded-2xl mt-1 mb-4 bg-white max-h-36">
+          {openDropdown === "date" && (
+            <View className="border border-red-400 rounded-2xl mt-1 mb-4 bg-gray-900 max-h-40 overflow-hidden">
               <FlatList
                 data={dates}
                 keyExtractor={(item) => item.toString()}
                 renderItem={({ item }) => (
-                  <TouchableOpacity activeOpacity={0.7}
+                  <TouchableOpacity
+                    activeOpacity={0.9}
                     onPress={() => handleSelectBirthDate(item)}
                     className="border-b border-red-200"
                   >
-                    <Text className="text-gray-800 py-2 px-4 text-xl">{item}</Text>
+                    <Text className="text-gray-200 text-xl py-2 px-4">
+                      {item}
+                    </Text>
                   </TouchableOpacity>
                 )}
                 style={{ maxHeight: 120 }} // Adjust height for three items
