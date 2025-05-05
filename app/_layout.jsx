@@ -1,20 +1,21 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./tabs/Home";
-import Login from "./tabs/Login";
-import Register from "./tabs/Register";
-import Profile from "./tabs/Profile";
-import Welcomepage from "./Welcomepage";
-import RegisterMethod from "./tabs/Registermethod"; // Ensure this matches your file name exactly
-import Details from "./tabs/Details";
-import Dashboard from "./tabs/Dashboard";
 import Homeheader from "./headers/Homeheader";
 import Dashheader from "./headers/Dashheader";
 import Otherheader from "./headers/Otherheader";
-import Task1 from "./tasks/Task1"; // Your Task1 component
-import Task2 from "./tasks/Task2"; // Your Task2 component
-import Task3 from "./tasks/Task3"; // Your Task3 component
-import Task4 from "./tasks/Task4"; // Your Task4 component
+import Welcomepage from "./Welcomepage";
+import Register from "./tabs/Register";
+import RegisterMethod from "./tabs/Registermethod";
+import Details from "./tabs/Details";
+import Login from "./tabs/Login";
+import Home from "./tabs/Home";
+import Profile from "./tabs/Profile";
+import Dashboard from "./tabs/Dashboard";
+import VoiceCalibration from "./tabs/VoiceCalibration";
+import Task1 from "./tasks/Task1";
+import Task2 from "./tasks/Task2";
+import Task3 from "./tasks/Task3";
+import Task4 from "./tasks/Task4";
 import "../global.css";
 
 const Stack = createNativeStackNavigator();
@@ -23,11 +24,11 @@ const commonHeaderOptions = { headerShown: true };
 
 const App = () => {
   return (
-    <Stack.Navigator initialRouteName="tabs/Home">
+    <Stack.Navigator initialRouteName="Welcomepage">
       <Stack.Screen
         name="Welcomepage"
         component={Welcomepage}
-        options={{ headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="tabs/Home"
@@ -47,11 +48,16 @@ const App = () => {
       <Stack.Screen
         name="tabs/Profile"
         component={Profile}
-        options={{ headerTitle: "Profile" }}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="tabs/Registermethod"
         component={RegisterMethod}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="tabs/VoiceCalibration"
+        component={VoiceCalibration}
         options={{ headerShown: false }}
       />
       <Stack.Screen

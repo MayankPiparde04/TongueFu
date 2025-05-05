@@ -7,19 +7,21 @@ const DashHeader = () => {
   const navigation = useNavigation();
 
   return (
-    <View className="flex-row mt-12 justify-between items-center px-4 py-2">
+    <View className="flex-row pt-12 bg-neutral-950 justify-between items-center px-4 py-2">
       <View className="gap-2">
-        <Text className="text-4xl font-bold">Hello Mayank,</Text>
-        <Text className="text-2xl">Welcome Back</Text>
+        <Text className="text-4xl text-neutral-200 font-bold">
+          Hello Mayank,
+        </Text>
+        <Text className="text-2xl text-neutral-200">Welcome Back</Text>
       </View>
       <View>
         <TouchableOpacity
-          activeOpacity={0.7}
+          activeOpacity={0.9}
           onPress={() => navigation.navigate("tabs/Profile")}
           accessibilityLabel="Navigate to Profile"
           accessible={true}
         >
-          <View className="border-2 border-black rounded-full overflow-hidden">
+          <View className="border-2 border-indigo-500 rounded-full overflow-hidden">
             <Image
               source={Profile}
               className="w-24 h-24"

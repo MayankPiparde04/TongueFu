@@ -8,7 +8,7 @@ const HomeHeader = () => {
   const navigation = useNavigation();
 
   return (
-    <View className="p-4 bg-white flex-row items-center justify-between w-full mt-8">
+    <View className="p-4 bg-neutral-950 flex-row items-center justify-between w-full pt-8">
       <View>
         <Image
           source={LOGO}
@@ -18,7 +18,12 @@ const HomeHeader = () => {
         />
       </View>
       <View>
-        <TouchableOpacity activeOpacity={0.7} onPress={()=>{navigation.navigate("tabs/Profile")}}>
+        <TouchableOpacity
+          activeOpacity={0.9}
+          onPress={() => {
+            navigation.navigate("tabs/Profile");
+          }}
+        >
           <Image
             source={Profile}
             className="w-20 h-20 rounded-full"
