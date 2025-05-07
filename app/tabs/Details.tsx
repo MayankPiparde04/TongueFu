@@ -12,7 +12,7 @@ const Details = () => {
 
   const handleContinue = () => {
     if (activeStage === 3) {
-      navigation.navigate("tabs/Home"); // Navigate to Home when done
+      navigation.navigate("tabs/VoiceCalibration");
     } else {
       setActiveStage((prev) => Math.min(prev + 1, 3));
     }
@@ -23,7 +23,7 @@ const Details = () => {
   };
 
   return (
-    <View className="flex-1 p-4 bg-white justify-between">
+    <View className="flex-1 bg-neutral-950 justify-between">
       <View className="flex-1">
         {activeStage === 0 && <StageOne />}
         {activeStage === 1 && <StageTwo />}
@@ -33,7 +33,8 @@ const Details = () => {
 
       <View className="flex-row justify-evenly h-20 items-center w-full pb-16">
         {activeStage > 0 && (
-          <TouchableOpacity activeOpacity={0.7}
+          <TouchableOpacity
+            activeOpacity={0.9}
             className={`rounded ${
               activeStage === 1 ? "bg-gray-300" : "bg-gray-400"
             }`}
@@ -45,14 +46,15 @@ const Details = () => {
           </TouchableOpacity>
         )}
 
-        <TouchableOpacity activeOpacity={0.7}
+        <TouchableOpacity
+          activeOpacity={0.9}
           className={`rounded ${
             activeStage === 3 ? "bg-gray-300" : "bg-blue-700"
           }`}
           onPress={handleContinue}
         >
-          <View className="h-16 bg-teal-400 rounded-2xl items-center justify-center w-36">
-            <Text className="text-black text-center text-2xl">
+          <View className="h-16 bg-indigo-300 rounded-2xl items-center justify-center w-36">
+            <Text className="text-indigo-950 font-semibold text-center text-2xl">
               {activeStage === 3 ? "Done" : "Continue"}
             </Text>
           </View>
