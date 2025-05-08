@@ -18,30 +18,30 @@ const WelcomePage = () => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <View className="flex flex-col items-center justify-center h-full gap-5 pb-12">
-        <View className="flex justify-center items-center mx-4 mb-4 pb-6 pt-6">
-          <Text className="text-3xl font-bold text-center px-12">
+    <SafeAreaView className="flex-1 bg-neutral-950 p-4">
+      <View className="flex flex-col items-center justify-center flex-1 gap-5 pb-6">
+        <View className="flex justify-center items-center mb-2 pt-6 mt-2">
+          <Text className="text-3xl text-neutral-100 font-bold text-center px-4 md:px-12">
             Master Your Speech with
           </Text>
-          <Text className="italic font-bold text-7xl text-teal-600 pt-2">
+          <Text className="italic font-serif font-bold text-6xl md:text-7xl text-teal-400 pt-6">
             TongueFu
           </Text>
         </View>
         <Image
           source={IMG1}
-          className="w-[90%] object-contain mb-10"
+          className="w-96 object-contain aspect-square h-96 mb-12 -mt-5"
           resizeMode="contain"
           accessibilityLabel="Welcome image for TongueFu"
         />
-        <View className="px-4 m-2">
-          <Text className="mx-4 my-4 text-center text-2xl">
+        <View className="px-4">
+          <Text className="text-center text-2xl md:text-3xl text-neutral-100">
             Start Your Journey to Fluent, Confident Communication.
           </Text>
         </View>
-        <TouchableOpacity onPress={handleGetStarted} activeOpacity={0.7}>
-          <View className="mt-4 h-16 w-80 bg-teal-600 rounded-2xl items-center justify-center shadow-md shadow-black">
-            <Text className="text-white text-3xl font-semibold">
+        <TouchableOpacity onPress={handleGetStarted} activeOpacity={0.9}>
+          <View className="mt-4 h-16 w-52 sm:w-44 bg-teal-200 rounded-2xl items-center justify-center shadow-md shadow-teal-400">
+            <Text className="text-teal-800 text-3xl md:text-4xl font-semibold">
               Get Started
             </Text>
           </View>
