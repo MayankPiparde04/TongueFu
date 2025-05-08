@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 const TaskCard = ({ task, icon, color, onPress }) => {
   return (
     <TouchableOpacity
+      activeOpacity={1}
       onPress={onPress}
       accessibilityLabel={`Navigate to ${task}`}
     >
@@ -23,20 +24,20 @@ const Task = () => {
   const navigation = useNavigation();
 
   return (
-    <View className="mt-6 mx-4">
-      <Text className="text-3xl text-gray-900 font-bold">Tasks</Text>
+    <View className="mt-6 mx-4 bg-neutral-950">
+      <Text className="text-3xl text-gray-200 font-bold">Tasks</Text>
       <View className="flex-row flex-wrap justify-between mt-4">
         <View className="w-1/2">
           <TaskCard
             task="Task 1"
             icon="star"
-            color="bg-red-500"
+            color="bg-red-600"
             onPress={() => navigation.navigate("tasks/Task1")}
           />
           <TaskCard
             task="Task 3"
             icon="flame"
-            color="bg-green-500"
+            color="bg-green-600"
             onPress={() => navigation.navigate("tasks/Task3")}
           />
         </View>
@@ -44,13 +45,13 @@ const Task = () => {
           <TaskCard
             task="Task 2"
             icon="heart"
-            color="bg-blue-500"
+            color="bg-purple-600"
             onPress={() => navigation.navigate("tasks/Task2")}
           />
           <TaskCard
             task="Task 4"
             icon="rocket"
-            color="bg-yellow-500"
+            color="bg-pink-600"
             onPress={() => navigation.navigate("tasks/Task4")}
           />
         </View>
